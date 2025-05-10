@@ -23,7 +23,7 @@
       max-width: 90%;
       width: 400px;
       background-color: rgba(255, 255, 255, 0.05);
-      padding: 30px 20px;
+      padding: 30px 20px 80px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       position: relative;
@@ -64,6 +64,10 @@
       background-color: #6fafff;
       color: white;
       margin-top: 20px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     footer {
       margin-top: 20px;
@@ -78,9 +82,9 @@
     <p>Maukah kamu berteman denganku lagi?</p>
     <button class="yes" onclick="showPopup()">Iya</button>
     <button id="noBtn" class="no" onclick="moveButton()">Engga ah</button>
+    <footer>© 2025 dari seseorang yang merasa bersalah 💌</footer>
     <button class="music-btn" onclick="document.getElementById('myAudio').play()">Putar Musik 🎵</button>
-    <audio id="myAudio" src="why-cant-you.mp3"></audio>
-    <footer>© 2025 dari seseorang yang masih peduli 💌</footer>
+    <audio id="myAudio" src="givemeasign.mp3"></audio>
   </div>
 
   <script>
@@ -117,4 +121,3 @@
   </script>
 </body>
 </html>
-
