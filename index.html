@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Untuk WICI 💖</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -28,31 +29,36 @@
       position: relative;
     }
     h1 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       margin-bottom: 15px;
     }
     p {
       font-size: 1.1em;
       margin-bottom: 25px;
+      line-height: 1.5;
     }
     button {
-      padding: 12px 24px;
+      padding: 14px 24px;
       font-size: 1em;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       transition: background 0.3s, transform 0.3s;
-      position: relative;
+      margin: 10px auto;
+      max-width: 100%;
+      display: block;
     }
     .yes {
       background-color: #ff6f91;
       color: white;
-      margin-bottom: 10px;
     }
     .no {
       background-color: #ffb347;
       color: white;
       position: absolute;
+      top: 160px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .music-btn {
       background-color: #6fafff;
@@ -70,7 +76,7 @@
   <div class="container">
     <h1>HAI WICIIII 👋</h1>
     <p>Maukah kamu berteman denganku lagi?</p>
-    <button class="yes" onclick="alert('Yay! Aku Janji bakal jaga pertemanan ini lebih baik lagi 😊')">Iya</button>
+    <button class="yes" onclick="showPopup()">Iya</button>
     <button id="noBtn" class="no" onclick="moveButton()">Engga ah</button>
     <button class="music-btn" onclick="document.getElementById('myAudio').play()">Putar Musik 🎵</button>
     <audio id="myAudio" src="why-cant-you.mp3"></audio>
@@ -83,8 +89,8 @@
 
     function moveButton() {
       moveCount++;
-      const maxX = window.innerWidth - 100;
-      const maxY = window.innerHeight - 200;
+      const maxX = window.innerWidth - 120;
+      const maxY = window.innerHeight - 180;
 
       const randomX = Math.floor(Math.random() * maxX);
       const randomY = Math.floor(Math.random() * maxY);
@@ -96,6 +102,19 @@
         noBtn.style.display = 'none';
       }
     }
+
+    function showPopup() {
+      Swal.fire({
+        title: '🥰 Terima kasih!',
+        text: 'Kamu nggak tahu betapa berharganya ini buatku.',
+        icon: 'success',
+        confirmButtonText: '💖 Sama-sama',
+        background: '#1e1e1e',
+        color: '#fff',
+        confirmButtonColor: '#ff6f91'
+      });
+    }
   </script>
 </body>
 </html>
+
