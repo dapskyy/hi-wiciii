@@ -11,32 +11,38 @@
       background-color: #121212;
       color: #ffffff;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       text-align: center;
-      overflow: hidden;
+      box-sizing: border-box;
     }
+
     .container {
       max-width: 90%;
       width: 400px;
       background-color: rgba(255, 255, 255, 0.05);
-      padding: 30px 20px 80px;
+      padding: 30px 20px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       position: relative;
+      box-sizing: border-box;
     }
+
     h1 {
       font-size: 1.6em;
       margin-bottom: 15px;
     }
+
     p {
       font-size: 1.1em;
       margin-bottom: 25px;
       line-height: 1.5;
     }
+
     button {
       padding: 14px 24px;
       font-size: 1em;
@@ -48,10 +54,12 @@
       max-width: 100%;
       display: block;
     }
+
     .yes {
       background-color: #ff6f91;
       color: white;
     }
+
     .no {
       background-color: #ffb347;
       color: white;
@@ -60,15 +68,13 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     .music-btn {
       background-color: #6fafff;
       color: white;
       margin-top: 20px;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
     }
+
     footer {
       margin-top: 20px;
       font-size: 0.8em;
@@ -83,9 +89,11 @@
     <button class="yes" onclick="showPopup()">Iya</button>
     <button id="noBtn" class="no" onclick="moveButton()">Engga ah</button>
     <footer>© 2025 dari seseorang yang merasa bersalah 💌</footer>
-    <button class="music-btn" onclick="document.getElementById('myAudio').play()">Putar Musik 🎵</button>
-    <audio id="myAudio" src="givemeasign.mp3"></audio>
   </div>
+
+  <!-- Tombol musik di luar kotak -->
+  <button class="music-btn" onclick="document.getElementById('myAudio').play()">Putar Musik 🎵</button>
+  <audio id="myAudio" src="givemeasign.mp3"></audio>
 
   <script>
     const noBtn = document.getElementById('noBtn');
