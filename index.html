@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk WICI 💖</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      max-width: 90%;
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .yes {
+      background-color: #ff6f91;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .no {
+      background-color: #ffb347;
+      color: white;
+      position: absolute;
+    }
+    .music-btn {
+      background-color: #6fafff;
+      color: white;
+      margin-top: 20px;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.8em;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>HAI WICIIII 👋</h1>
+    <p>Maukah kamu berteman denganku lagi?</p>
+    <button class="yes" onclick="alert('Yay! Aku Janji bakal jaga pertemanan ini lebih baik lagi 😊')">Iya</button>
+    <button id="noBtn" class="no" onclick="moveButton()">Engga ah</button>
+    <button class="music-btn" onclick="document.getElementById('myAudio').play()">Putar Musik 🎵</button>
+    <audio id="myAudio" src="why-cant-you.mp3"></audio>
+    <footer>© 2025 dari seseorang yang masih peduli 💌</footer>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    let moveCount = 0;
+
+    function moveButton() {
+      moveCount++;
+      const maxX = window.innerWidth - 100;
+      const maxY = window.innerHeight - 200;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+
+      if (moveCount > 10) {
+        noBtn.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
